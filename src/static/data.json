@@ -1,0 +1,56 @@
+{
+  "test": 1,
+  "step": 0,
+  "questions": [
+    {
+      "text": "Сколько базовых типов данных поддерживает JS?",
+      "multi": false,
+      "values": [
+        {
+          "text": "5",
+          "right": false
+        },
+        {
+          "text": "6",
+          "right": true
+        },
+        {
+          "text": "7",
+          "right": true
+        }
+      ]
+    },
+    {
+      "text": "Что выведет код \"typeof NaN\"?",
+      "multi": false,
+      "values": [
+        {
+          "text": "undefined",
+          "right": false
+        },
+        {
+          "text": "object",
+          "right": false
+        },
+        {
+          "text": "number",
+          "right": true
+        }
+      ]
+    },
+    {
+      "text": "0.1 + 0.2 == 0.3?",
+      "multi": false,
+      "values": [
+        {
+          "text": "true",
+          "right": false
+        },
+        {
+          "text": "false",
+          "right": true
+        }
+      ]
+    }
+  ]
+}
