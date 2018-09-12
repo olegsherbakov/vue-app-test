@@ -1,4 +1,4 @@
-# vue-hello-world
+# vue-app-test
 
 ## Project setup
 ```
