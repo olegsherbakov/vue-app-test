@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <div class="center">
       <button
         class="get-started"
@@ -15,10 +15,14 @@
         v-bind:text="current.text"
         v-bind:values="current.values"
       />
+      <Progress
+         v-bind:current="step"
+         v-bind:length="questions.length"
+      />
     </div>
     <div v-if="phase === 'end'">
-      <p>Ваш результат: {{ calculate }} / {{ questions.length }}</p>
       <div class="center">
+        <h1>Ваш результат: {{ calculate }} / {{ questions.length }}</h1>
         <button
           class="get-repeat"
           @click="repeat"
@@ -33,6 +37,7 @@
 <script>
 import data from '../assets/data'
 import Question from './Question.vue'
+import Progress from './Progress.vue'
 
 export default {
   name: 'Test',
@@ -45,6 +50,7 @@ export default {
   methods: {
     begin: function() {
       this.step += 1
+      this.$parent.showGreet = false
     },
     takeResult(index) {
       this.result.push(this.current.values[index].right)
@@ -72,13 +78,17 @@ export default {
     }
   },
   components: {
-    Question
+    Question,
+    Progress
   }
 }
 
 </script>
 
 <style scoped>
+.container {
+  padding: 26px 0;
+}
 .center {
   text-align: center;
 }

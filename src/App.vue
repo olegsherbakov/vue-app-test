@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1>Здесь Вы можете пройти тест на знание JS.</h1>
+      <transition name="fade">
+        <h1 v-if="showGreet">Пройти короткий тест на знание JS.</h1>
+      </transition>
       <Test />
     </div>
   </div>
@@ -12,6 +14,11 @@ import Test from './components/Test.vue'
 
 export default {
   name: 'app',
+  data: function() {
+    return {
+      showGreet: true
+    }
+  },
   components: {
     Test
   }
@@ -38,5 +45,11 @@ h1 {
   width: 600px;
   text-align: left;
   margin: 0 auto;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
