@@ -1,4 +1,6 @@
-# vue-app-test
+# Demo
+
+https://olegsherbakov.github.io/jstest/
 
 ## Project setup
 ```
