@@ -41,7 +41,7 @@ export default {
   name: 'Question',
   data: function() {
     return {
-      picked: -1
+      picked: -1,
     }
   },
   props: ['step', 'text', 'values'],
@@ -49,8 +49,8 @@ export default {
     submitResult: function() {
       this.$parent.takeResult(this.picked)
       this.picked = -1
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -69,7 +69,7 @@ export default {
   padding: 13px 0;
 }
 .value {
- padding: 7px 0;
+  padding: 7px 0;
 }
 .submit {
   border-radius: 7px;

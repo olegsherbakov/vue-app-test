@@ -11,10 +11,10 @@
 </template>
 
 <script>
-  export default {
-    name: 'Progress',
-    props: ['current', 'length']
-  }
+export default {
+  name: 'Progress',
+  props: ['current', 'length'],
+}
 </script>
 
 <style scoped>
@@ -35,12 +35,11 @@
   margin: 0 7px;
   box-shadow: 0 0 5px #ccc;
   border: 1px solid #ccc;
-  transition: opacity .3s ease-in,
-    background-color .3s ease-out .3s,
-    color .3s ease-out .3s;
+  transition: opacity 0.3s ease-in, background-color 0.3s ease-out 0.3s,
+    color 0.3s ease-out 0.3s;
 }
 .passed {
-  opacity: .2;
+  opacity: 0.2;
 }
 .current {
   background: firebrick;

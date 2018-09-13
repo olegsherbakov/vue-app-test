@@ -22,12 +22,12 @@ export default {
   name: 'app',
   data: function() {
     return {
-      showGreet: true
+      showGreet: true,
     }
   },
   components: {
-    Test
-  }
+    Test,
+  },
 }
 </script>
 
@@ -75,10 +75,10 @@ code {
   padding: 0 24px;
 }
 .fadeOut {
-  transition: opacity .7s ease-in 1s;
+  transition: opacity 0.7s ease-in 1s;
 }
 .transparent {
-  opacity: .1;
+  opacity: 0.1;
 }
 .center {
   text-align: center;

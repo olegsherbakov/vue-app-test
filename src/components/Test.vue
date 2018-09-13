@@ -44,7 +44,7 @@ export default {
   data: function() {
     return {
       ...data,
-      result: []
+      result: [],
     }
   },
   methods: {
@@ -59,13 +59,13 @@ export default {
     repeat: function() {
       this.result = []
       this.step = 1
-    }
+    },
   },
   computed: {
     phase: function() {
       if (this.step === 0) {
         return 'begin'
-      } else if ((this.step !== 0) && ((this.step - 1) === this.questions.length)) {
+      } else if (this.step !== 0 && this.step - 1 === this.questions.length) {
         return 'end'
       }
       return 'during'
@@ -75,18 +75,18 @@ export default {
     },
     calculate: function() {
       return this.result.filter(r => r).length
-    }
+    },
   },
   components: {
     Question,
-    Progress
-  }
+    Progress,
+  },
 }
-
 </script>
 
 <style scoped>
-.get-started, .get-repeat {
+.get-started,
+.get-repeat {
   padding: 13px;
   border-radius: 10px;
   font-size: 21px;
