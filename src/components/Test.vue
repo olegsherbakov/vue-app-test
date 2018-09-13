@@ -1,37 +1,37 @@
 <template>
-  <div class="container">
-    <div class="center">
-      <button
-        class="get-started"
-        @click="begin"
-        v-if="phase === 'begin'"
-      >
-        Начать тест
-      </button>
-    </div>
-    <div v-if="phase === 'during'">
-      <b>Вопрос #{{ step }}</b>
-      <Question
-        v-bind:text="current.text"
-        v-bind:values="current.values"
-      />
-      <Progress
-         v-bind:current="step"
-         v-bind:length="questions.length"
-      />
-    </div>
-    <div v-if="phase === 'end'">
+    <div class="container">
       <div class="center">
-        <h1>Ваш результат: {{ calculate }} / {{ questions.length }}</h1>
         <button
-          class="get-repeat"
-          @click="repeat"
+          class="button get-started"
+          @click="begin"
+          v-if="phase === 'begin'"
         >
-          Повторить тест
+          Начать тест
         </button>
       </div>
+      <div v-if="phase === 'during'">
+        <Progress
+          v-bind:current="step"
+          v-bind:length="questions.length"
+        />
+        <Question
+          v-bind:step="step"
+          v-bind:text="current.text"
+          v-bind:values="current.values"
+        />
+      </div>
+      <div v-if="phase === 'end'">
+        <div class="center">
+          <h3>Ваш результат: {{ calculate }} / {{ questions.length }}</h3>
+          <button
+            class="button get-repeat"
+            @click="repeat"
+          >
+            Повторить тест
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -86,21 +86,9 @@ export default {
 </script>
 
 <style scoped>
-.container {
-  padding: 26px 0;
-}
-.center {
-  text-align: center;
-}
 .get-started, .get-repeat {
-  background: firebrick;
   padding: 13px;
-  color: white;
-  border: none;
   border-radius: 10px;
-  box-shadow: 0 0 10px black;
-  outline: none;
-  cursor: pointer;
   font-size: 21px;
 }
 </style>

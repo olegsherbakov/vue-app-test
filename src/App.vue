@@ -1,10 +1,16 @@
 <template>
   <div id="app">
     <div class="container">
-      <transition name="fade">
-        <h1 v-if="showGreet">Пройти короткий тест на знание JS.</h1>
-      </transition>
-      <Test />
+      <div class="flex-container">
+        <div class="content">
+          <h1 v-bind:class="{
+            center: true,
+            fadeOut: true,
+            transparent: !showGreet
+          }">Короткий тест на знание JS.</h1>
+          <Test />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -31,25 +37,58 @@ export default {
   margin: 0;
   padding: 0;
 }
+html,
+body,
+#app,
+.container {
+  height: 100%;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 h1 {
-  margin: 26px 0;
+  padding: 26px 0;
+}
+h3 {
+  padding: 0 0 13px;
+}
+h4 {
+  padding: 13px 0;
+}
+code {
+  display: block;
+  font-size: 1.2rem;
 }
 .container {
-  width: 600px;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+.flex-container {
+  flex: 1 0 auto;
+}
+.content {
+  max-width: 670px;
   margin: 0 auto;
+  padding: 0 24px;
 }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .3s;
+.fadeOut {
+  transition: opacity .7s ease-in 1s;
 }
-.fade-enter, .fade-leave-to {
-  opacity: 0;
+.transparent {
+  opacity: .1;
+}
+.center {
+  text-align: center;
+}
+.button {
+  background: firebrick;
+  color: white;
+  border: none;
+  box-shadow: 0 0 10px black;
+  outline: none;
+  cursor: pointer;
 }
 </style>

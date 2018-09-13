@@ -1,6 +1,9 @@
 <template>
   <div class="item">
-    <b>Q:</b> {{ text }}
+    <h4>Q #{{ step }}</h4>
+    <code>
+      {{ text }}
+    </code>
     <div class="values">
       <div
         class="value"
@@ -24,7 +27,7 @@
       </div>
     </div>
     <button
-      class="submit"
+      class="button submit"
       v-on:click="submitResult"
       :disabled="picked === -1"
     >
@@ -41,7 +44,7 @@ export default {
       picked: -1
     }
   },
-  props: ['text', 'values'],
+  props: ['step', 'text', 'values'],
   methods: {
     submitResult: function() {
       this.$parent.takeResult(this.picked)
@@ -55,7 +58,7 @@ export default {
 .item {
   padding: 13px;
   border: 1px solid #ccc;
-  border-radius: 10px;
+  border-radius: 13px;
   margin: 13px 0;
 }
 .input {
@@ -69,7 +72,8 @@ export default {
  padding: 7px 0;
 }
 .submit {
-  padding: 3px;
+  border-radius: 7px;
+  padding: 7px;
   font-size: 17px;
 }
 </style>

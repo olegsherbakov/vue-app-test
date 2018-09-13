@@ -33,13 +33,16 @@
   background: ivory;
   border-radius: 15px;
   margin: 0 7px;
-  box-shadow: 0 0 4px darkblue;
+  box-shadow: 0 0 5px #ccc;
+  border: 1px solid #ccc;
+  transition: opacity .3s ease-in,
+    background-color .3s ease-out .3s,
+    color .3s ease-out .3s;
 }
 .passed {
   opacity: .2;
 }
 .current {
-  font-weight: bold;
   background: firebrick;
   color: ivory;
 }
