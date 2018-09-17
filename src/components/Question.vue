@@ -1,6 +1,5 @@
 <template>
   <div class="item">
-    <h4>Q #{{ step }}</h4>
     <code>
       {{ text }}
     </code>
@@ -11,19 +10,18 @@
         :key="index"
       >
         <input
-          class="input"
           type="radio"
           v-model="picked"
           v-bind:value="index"
           v-bind:name="`js-question` + index"
           v-bind:id="`js-question-` + index"
         />
-          <label
-            class="label"
-            v-bind:for="`js-question-` + index"
-          >
-            {{ question.text }}
-          </label>
+        <label
+          class="label"
+          v-bind:for="`js-question-` + index"
+        >
+          {{ question.text }}
+        </label>
       </div>
     </div>
     <button
@@ -60,10 +58,7 @@ export default {
   border: 1px solid #ccc;
   border-radius: 13px;
   margin: 13px 0;
-}
-.input {
-  position: relative;
-  top: 1px;
+  box-shadow: 0 0 5px #ccc;
 }
 .values {
   padding: 13px 0;

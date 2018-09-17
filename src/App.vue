@@ -7,7 +7,9 @@
             center: true,
             fadeOut: true,
             transparent: !showGreet
-          }">Короткий тест на знание JS.</h1>
+          }">
+            Короткий тест на знание JS.
+          </h1>
           <Test />
         </div>
       </div>
@@ -43,6 +45,14 @@ body,
 .container {
   height: 100%;
 }
+html {
+  font: 112.5%/1.45em georgia, serif;
+}
+body {
+  font-family: georgia, serif;
+  font-weight: 400;
+  font-kerning: normal;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -50,13 +60,10 @@ body,
   color: #2c3e50;
 }
 h1 {
-  padding: 26px 0;
+  padding: 1rem 0;
 }
 h3 {
-  padding: 0 0 13px;
-}
-h4 {
-  padding: 13px 0;
+  padding-bottom: 1rem;
 }
 code {
   display: block;
