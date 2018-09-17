@@ -13,6 +13,12 @@
           <Test />
         </div>
       </div>
+      <div class="footer">
+        <div class="footer-content">
+          Powered by <a href="https://vuejs.org/">Vue.js</a> 2018
+          <br />Repository <a href="https://github.com/olegsherbakov/vue-app-test">github.com</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -78,8 +84,21 @@ code {
 }
 .content {
   max-width: 670px;
+  min-width: 420px;
   margin: 0 auto;
   padding: 0 24px;
+}
+.footer {
+  text-align: center;
+  white-space: nowrap;
+}
+.footer-content {
+  max-width: 670px;
+  min-width: 420px;
+  margin: 0 auto;
+  padding: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .fadeOut {
   transition: opacity 0.7s ease-in 1s;

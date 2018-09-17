@@ -71,4 +71,8 @@ export default {
   padding: 7px;
   font-size: 17px;
 }
+.submit:disabled {
+  background: #ccc;
+  box-shadow: 0 0 5px #eee;
+}
 </style>
